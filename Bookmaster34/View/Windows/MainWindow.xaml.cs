@@ -33,7 +33,7 @@ namespace Bookmaster34
 
         private void ClouseMi_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();    
         }
 
         private void ManageCustomer_Click(object sender, RoutedEventArgs e)
