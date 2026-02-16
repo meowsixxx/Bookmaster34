@@ -1,4 +1,5 @@
-﻿using Bookmaster34.View.Windows;
+﻿using Bookmaster34.View.Pages;
+using Bookmaster34.View.Windows;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,12 +26,20 @@ namespace Bookmaster34
         private void LoginMi_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow ();
-            loginWindow.ShowDialog ();        
+           if (loginWindow.ShowDialog ()==true)
+            {
+                LibraryMi.Visibility = Visibility.Visible;  
+                LogoutMi.Visibility = Visibility.Visible ;
+                LogoutMi.Visibility=Visibility.Collapsed ;
+            }
         }
 
         private void LogoutMi_Click(object sender, RoutedEventArgs e)
         {
 
+            LibraryMi.Visibility = Visibility.Collapsed;
+            LogoutMi.Visibility = Visibility.Collapsed;
+            LogoutMi.Visibility = Visibility.Visible;
         }
 
         private void ClouseMi_Click(object sender, RoutedEventArgs e)
@@ -38,39 +47,25 @@ namespace Bookmaster34
             Close();    
         }
 
-        private void ManageCustomer_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Circulation_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Reports_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BrowsingCatalog_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void ManageCustomers_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new ManageCustomersPage());
         }
 
         private void Circulation_Click_1(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new CirculationPage());
         }
 
         private void Reports_Click_1(object sender, RoutedEventArgs e)
         {
+            MainFrame.Navigate(new ReportsPage());
+        }
 
+        private void BrowseCatalogMi_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new BrowseCatalogPage());
         }
     }
 }

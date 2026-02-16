@@ -19,8 +19,8 @@
                 <MenuItem Name="ClouseMi" Header="Закрыть приложение" Click="ClouseMi_Click"/>
             </MenuItem>
             
-            <MenuItem Header="Библиотека">
-                <MenuItem Name="BrowseCatalogMi" Header="Просмотр каталога" Click="BrowsingCatalog_Click"/>
+            <MenuItem Name="LibraryMi" Visibility="Collapsed" Header="Библиотека">
+                <MenuItem Name="BrowseCatalogMi" Header="Просмотр каталога" Click="BrowseCatalogMi_Click"/>
                 <MenuItem Name="ManageCustomersMi" Header="Управление читателями" Click="ManageCustomers_Click"/>
                 <MenuItem Name="CirculationMi" Header="Управление абонентом" Click="Circulation_Click_1"/>
                 <MenuItem Name="ReportsMi" Header="Отчеты" Click="Reports_Click_1"/>
@@ -28,5 +28,7 @@
 
             </MenuItem>
         </Menu>
+        
+        <Frame Name="MainFrame" Grid.Row="2"/>
     </Grid>
 </Window>
